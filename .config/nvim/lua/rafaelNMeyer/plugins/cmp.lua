@@ -12,8 +12,9 @@ return {
 		local lspconfig = require('lspconfig')
 		local servers = {
 			{ name = 'clangd',        settings = {} },
+			{ name = 'zls',           settings = {} },
 			{ name = 'rust_analyzer', settings = {} },
-			{ name = 'tsserver',      settings = {} },
+			{ name = 'ts_ls',         settings = {} },
 			{ name = 'gopls',         settings = {} },
 			{
 				name = 'bashls',

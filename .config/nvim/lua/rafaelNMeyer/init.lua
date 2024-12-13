@@ -1,5 +1,4 @@
-require("rafaelNMeyer.remap")
-require("rafaelNMeyer.set")
-require("rafaelNMeyer.lazy")
-
-vim.cmd("colorscheme gruvbox")
+require("rafaelNMeyer.config.remap")
+require("rafaelNMeyer.config.set")
+require("rafaelNMeyer.config.lazy")
+require("rafaelNMeyer.config.colorscheme")
