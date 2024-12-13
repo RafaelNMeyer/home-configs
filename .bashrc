@@ -28,13 +28,24 @@ export PATH=$BUN_INSTALL/bin:$PATH
 export PATH=$PATH:/usr/local/go/bin
 PATH=$PATH:$HOME/go/bin
 
+PATH=$PATH:$HOME/hyperledger/bin
+
 export HISTCONTROL=ignoredups
 export HISTSIZE=-1
 export HISTFILESIZE=-1
 
+export PATH="$PATH:/opt/nvim-linux64/bin"
+
+export ANDROID_HOME=$HOME/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+export VCPKG_ROOT=$HOME/repo/vcpkg
+export PATH=$VCPKG_ROOT:$PATH
+
 alias vim="nvim"
+alias la="ls -la"
 
 export EDITOR='nvim'
 tmux new -A
 set -o vi
-export COLUMNS LINES;
