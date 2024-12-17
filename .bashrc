@@ -15,6 +15,15 @@ PS1='\[\033[1;32m\] \W > \[\033[00m\]'
 
 [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx
 
+if [ -x "$(command -v tmux)" ] && [ -n "$DISPLAY" ] && [ -z "$TMUX" ]; then
+	tmux_main_session="main"
+	if [ -n "$(tmux list-clients -t "$tmux_main_session" 2>/dev/null)" ]; then
+		exec tmux new
+	else
+		exec tmux new -A -s"$tmux_main_session"
+	fi
+fi
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
@@ -47,5 +56,4 @@ alias vim="nvim"
 alias la="ls -la"
 
 export EDITOR='nvim'
-tmux new -A
 set -o vi
