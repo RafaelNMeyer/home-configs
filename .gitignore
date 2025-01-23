@@ -11,3 +11,5 @@
 
 !.bashrc
 !.tmux.conf
+!.scripts/
+!.scripts/**
