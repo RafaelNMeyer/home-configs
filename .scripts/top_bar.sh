@@ -17,9 +17,9 @@ do
     L="BRI:$L%"
     T=$(bluetoothctl info | grep Battery | grep -o '(.*)' | sed 's/[()]//g')
 		T="🎧:$T%"
-		P=$(./day_counter.sh "20250601") # 01/06/2025
+		P=$(~/.scripts/day_counter.sh "20250601") # 01/06/2025
 		P="Final Paper: [ $P ]"
-		info_days=$(./final_paper_counter.sh)
+		info_days=$(~/.scripts/final_paper_counter.sh)
 		info=$(echo $info_days | awk -F '@' '{print $1}')
 		days=$(echo $info_days | awk -F '@' '{print $2}')
 		F="$info: [ $days ]"

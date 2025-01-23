@@ -36,6 +36,6 @@ then
 	deadline=$review_date
 fi
 
-days_left=$(./day_counter.sh $deadline)
+days_left=$(~/.scripts/day_counter.sh $deadline)
 
 echo "$info@$days_left"
