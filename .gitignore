@@ -5,11 +5,16 @@
 !.editorconfig
 
 !README.md
+
 !.config/
 !.config/nvim
 !.config/nvim/**
 
 !.bashrc
+
 !.tmux.conf
+
 !.scripts/
 !.scripts/**
+
+!.xinitrc
