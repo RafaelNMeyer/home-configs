@@ -54,6 +54,7 @@ export PATH=$VCPKG_ROOT:$PATH
 
 alias vim="nvim"
 alias la="ls -la"
+alias ll="ls -l"
 
 export EDITOR='nvim'
 set -o vi
