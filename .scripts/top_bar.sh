@@ -13,17 +13,10 @@ do
     B="BAT:$B%"
     M=$(free | grep Mem | awk '{printf "MEM:%d%%", ($3/$2) * 100}')
     L=$(cat /sys/class/backlight/nvidia_0/brightness)
-    #L=$(light)
     L="BRI:$L%"
-    T=$(bluetoothctl info | grep Battery | grep -o '(.*)' | sed 's/[()]//g')
+    T=$(bluetoothctl info AC:80:0A:75:9E:47 | grep Battery | grep -o '(.*)' | sed 's/[()]//g')
 		T="🎧:$T%"
-		P=$(~/.scripts/day_counter.sh "20250601") # 01/06/2025
-		P="Final Paper: [ $P ]"
-		info_days=$(~/.scripts/final_paper_counter.sh)
-		info=$(echo $info_days | awk -F '@' '{print $1}')
-		days=$(echo $info_days | awk -F '@' '{print $2}')
-		F="$info: [ $days ]"
-    xsetroot -name "$(printf ' %b  %b %b  %b  %b  %b  %b  %b ' "$P" "$F" "$M" "$V" "$L" "$B" "$T" "$D")"
+    xsetroot -name "$(printf ' %b %b  %b  %b  %b  %b  %b ' "$F" "$M" "$V" "$L" "$B" "$T" "$D")"
 
     sleep 1s
 done &
